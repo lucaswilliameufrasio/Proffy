@@ -14,7 +14,9 @@
     "test:staged": "yarn test --findRelatedTests",
     "test:ci": "yarn test --coverage",
     "lint": "eslint --ext .js,.ts src --color",
-    "prettier-format": "prettier --write 'src/**/*.{ts,json}'"
+    "prettier-format": "prettier --write 'src/**/*.{ts,json}'",
+    "migrate:up": "prisma migrate up --experimental",
+    "migrate:down": "prisma migrate down --experimental"
   },
   "devDependencies": {
     "@prisma/cli": "^2.4.1",

@@ -7,7 +7,9 @@ export default class ConnectionsController {
   async index(request: Request, response: Response) {
     const totalConnections = await prisma.connections.count()
 
-    return response.json(totalConnections)
+    return response.json({
+      total: totalConnections
+    })
   }
 
   async create(request: Request, response: Response) {

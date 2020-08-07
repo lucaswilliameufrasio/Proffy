@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "rimraf dist && tsc -p tsconfig-build.json",
-    "start": "node dist/src/server.js",
+    "start": "node dist/server.js",
     "dev": "tsnd --transpile-only --no-notify --ignore-watch node_modules src/server.ts",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test:trace": "jest --passWithNoTests --runInBand",

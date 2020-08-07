@@ -10,4 +10,17 @@ export default class ConnectionsController {
     return response.json(totalConnections)
   }
 
+  async create(request: Request, response: Response) {
+    const { user_id } = request.body
+
+    await prisma.connections.create({
+      data: {
+        user: {
+          connect: { id: user_id }
+        }
+      }
+    })
+
+    return response.status(201).send()
+  }
 }

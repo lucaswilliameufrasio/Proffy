@@ -11,6 +11,45 @@ interface IScheduleItem {
 }
 
 export default class ClassesController {
+  async index(request: Request, response: Response) {
+    const filters = request.query
+
+    const week_day = filters.week_day as string
+    const subject = filters.subject as string
+    const time = filters.time as string
+
+    if (!week_day || !subject || !time) {
+      return response.status(400).json({
+        error: 'Missing parameters to search classes'
+      })
+    }
+
+    const timeInMinutes = convertHourToMinutes(time)
+
+    const classes = await prisma.classes.findMany({
+      where: {
+        subject,
+        ClassSchedules: {
+          some: {
+            week_day: {
+              equals: Number(week_day)
+            },
+            from: {
+              lte: timeInMinutes
+            },
+            to: {
+              gt: timeInMinutes
+            }
+          }
+        }
+      },
+      include: {
+        user: true,
+      }
+    })
+
+    return response.json(classes)
+  }
 
   async create(request: Request, response: Response) {
     const {

@@ -14,9 +14,6 @@ module.exports = {
     '!**/*.d.ts'
   ],
   coverageDirectory: 'coverage',
-  moduleNameMapper: {
-    '@/(.*)': '<rootDir>/src/$1'
-  },
   testPathIgnorePatterns: [
     '<rootDir>/node_modules/',
   ]

@@ -1,0 +1,43 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url = "***"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id       Int    @id @default(autoincrement())
+  name     String
+  avatar   String
+  whatsapp String
+  bio      String
+}
+
+model Classes {
+  id      Int    @id @default(autoincrement())
+  subject String
+  cost    Float
+  user    User   @relation(fields: [userId], references: [id])
+  userId  Int
+}
+
+model ClassSchedules {
+  id       Int  @id @default(autoincrement())
+  week_day Int
+  from     Int
+  to       Int
+  class     Classes @relation(fields: [classId], references: [id])
+  classId   Int
+}
+
+model Connections {
+  id Int @id @default(autoincrement())
+  user    User   @relation(fields: [userId], references: [id])
+  userId  Int
+  createdAt DateTime @default(now())
+}

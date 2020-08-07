@@ -1,0 +1,7 @@
+{
+    "*.js, *.ts": [
+        "yarn lint",
+        "yarn prettier-format",
+        "yarn test:staged"
+    ]
+}

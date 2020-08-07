@@ -1,0 +1,8 @@
+node_modules
+.vscode
+coverage
+build/*
+public/*
+src/react-app-env.d.ts
+src/serviceWorker.ts
+*.json

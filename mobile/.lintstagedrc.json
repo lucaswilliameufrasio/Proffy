@@ -2,7 +2,6 @@
     "*.ts?(x)": [
         "yarn lint",
         "yarn prettier-format",
-        "yarn test:staged",
-        "git add"
+        "yarn test:staged"
     ]
 }

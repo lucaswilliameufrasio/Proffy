@@ -12,25 +12,25 @@
             ],
             "parserOptions": {
                 "project": "./tsconfig.json"
-            }
-        }
-    ],
-    "rules": {
-        "import/order": [
-            "error",
-            {
-                "groups": [
-                    "builtin",
-                    [
-                        "sibling",
-                        "parent"
-                    ],
-                    "internal",
-                    "external",
-                    "index",
-                    "object"
+            },
+            "rules": {
+                "import/order": [
+                    "error",
+                    {
+                        "groups": [
+                            "index",
+                            "internal",
+                            "external",
+                            [
+                                "sibling",
+                                "parent"
+                            ],
+                            "builtin",
+                            "object"
+                        ]
+                    }
                 ]
             }
-        ]
-    }
+        }
+    ]
 }

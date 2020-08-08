@@ -26,9 +26,13 @@ const Landing: React.FC = () => {
     fetchTotalConnections()
   })
 
-  function handleNavigateToGiveClassesPage() {}
+  function handleNavigateToGiveClassesPage() {
+    navigate('GiveClasses')
+  }
 
-  function handleNavigateToStudyPages() {}
+  function handleNavigateToStudyPages() {
+    navigate('Study')
+  }
 
   return (
     <View style={styles.container}>

@@ -11,7 +11,7 @@
     "test:staged": "yarn test --findRelatedTests",
     "test:ci": "yarn test --coverage",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
-    "prettier-format": "prettier --write 'src/**/*.{ts,tsx,json}'"
+    "prettier-format": "prettier --write 'src/**/*.{ts,tsx,js,json}'"
   },
   "dependencies": {
     "expo": "~38.0.8",

@@ -1,5 +1,5 @@
 {
-    "*.js": [
+    "*.ts?(x)": [
         "yarn lint",
         "yarn prettier-format",
         "yarn test:staged",

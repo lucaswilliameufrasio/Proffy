@@ -8,10 +8,10 @@ import './styles.css'
 import api from '../../services/api'
 
 export interface ITeacher {
-  cost: Number
+  cost: number
   subject: string
   user: {
-    id: Number
+    id: number
     name: string
     bio: string
     avatar: string

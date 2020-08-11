@@ -1,16 +1,19 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
-import PageHeader from '../../components/PageHeader'
+import FormButton from '../../components/FormButton'
 import Input from '../../components/Input'
+import PageHeader from '../../components/PageHeader'
 import Select from '../../components/Select'
 import Textarea from '../../components/Textarea'
+import UserBadge from '../../components/UserBadge'
 
+import rocketIcon from '../../assets/images/icons/rocket.svg'
 import warningIcon from '../../assets/images/icons/warning.svg'
 
 import api from '../../services/api'
 
 import './styles.css'
-import { useHistory } from 'react-router-dom'
 
 const TeacherForm: React.FC = () => {
   const [name, setName] = useState('')
@@ -33,6 +36,13 @@ const TeacherForm: React.FC = () => {
     addScheduleItem([...scheduleItems, scheduleItemModel])
   }
 
+  function removeScheduleItem(index: number) {
+    if (scheduleItems.length > 1) {
+      scheduleItems.splice(index, 1)
+      addScheduleItem([...scheduleItems])
+    }
+  }
+
   function setScheduleItemValue(
     position: number,
     field: string,
@@ -52,16 +62,6 @@ const TeacherForm: React.FC = () => {
   async function handleCreateClass(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
-    console.log({
-      name,
-      avatar,
-      whatsapp,
-      bio,
-      subject,
-      cost,
-      scheduleItems
-    })
-
     try {
       await api.post('classes', {
         name,
@@ -72,9 +72,9 @@ const TeacherForm: React.FC = () => {
         cost,
         schedule: scheduleItems
       })
-      
+
       history.push('/')
-      
+
       alert('Cadastro realizado com sucesso')
     } catch (error) {
       alert('Deu mierda')
@@ -84,8 +84,15 @@ const TeacherForm: React.FC = () => {
   return (
     <div id="page-teacher-form" className="container">
       <PageHeader
+        pageTitle="Dar aulas"
         title="Que incrível que você quer dar aulas."
         description="O primeiro passo é preencher esse formulário de inscrição"
+        headerRight={
+          <span>
+            <img src={rocketIcon} alt="Rocket" />
+            <p>Prepare-se! vai ser o máximo.</p>
+          </span>
+        }
       />
 
       <main>
@@ -93,24 +100,21 @@ const TeacherForm: React.FC = () => {
           <fieldset>
             <legend>Seus dados</legend>
 
-            <Input
-              name="name"
-              label="Nome completo"
-              value={name}
-              onChange={(event) => setName(event.target.value)}
-            />
-            <Input
-              name="avatar"
-              label="Avatar"
-              value={avatar}
-              onChange={(event) => setAvatar(event.target.value)}
-            />
-            <Input
-              name="whatsapp"
-              label="Whatsapp"
-              value={whatsapp}
-              onChange={(event) => setWhatsapp(event.target.value)}
-            />
+            <div className="profile-phone-container">
+              <UserBadge
+                name="Lucas William"
+                source="https://github.com/lucaswilliameufrasio.png"
+                alt="Lucas William"
+              />
+
+              <Input
+                name="whatsapp"
+                label="Whatsapp"
+                value={whatsapp}
+                onChange={(event) => setWhatsapp(event.target.value)}
+              />
+            </div>
+
             <Textarea
               name="bio"
               label="Biografia"
@@ -150,7 +154,7 @@ const TeacherForm: React.FC = () => {
 
           <fieldset>
             <legend>
-              Horários Disponíveis{' '}
+              Horários Disponíveis
               <button type="button" onClick={addNewScheduleItem}>
                 + Novo Horário
               </button>
@@ -199,6 +203,13 @@ const TeacherForm: React.FC = () => {
                       setScheduleItemValue(index, 'to', event.target.value)
                     }
                   />
+
+                  <button
+                    type="button"
+                    onClick={() => removeScheduleItem(index)}
+                  >
+                    Excluir horário
+                  </button>
                 </div>
               )
             })}
@@ -211,7 +222,7 @@ const TeacherForm: React.FC = () => {
               Preencha todos os dados
             </p>
 
-            <button type="submit">Salvar cadastro</button>
+            <FormButton text="Salvar cadastro" deactivated={false} />
           </footer>
         </form>
       </main>

@@ -1,15 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
+import FormButton from '../../components/FormButton'
+import HideShowPassButton from '../../components/HideShowPassButton'
 import StackedInput from '../../components/StackedInput'
+import SideBanner from '../../components/SideBanner'
 
 import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg'
 
 import './styles.css'
-import SideBanner from '../../components/SideBanner'
-import HideShowPassButton from '../../components/HideShowPassButton'
 
 const Login: React.FC = () => {
+  const [showPassword, setShowPassword] = useState(false)
+
+  function handlePasswordVisibility() {
+    setShowPassword(!showPassword)
+  }
+
   return (
     <div className="login-container">
       <SideBanner />
@@ -20,12 +27,16 @@ const Login: React.FC = () => {
             <h2>Fazer login</h2>
             <StackedInput placeholder="E-mail" name="email" />
             <StackedInput
-              type="password"
+              type={showPassword ? 'text' : 'password'}
               isLastInput
               placeholder="Senha"
               name="password"
+              autoComplete="off"
             >
-              <HideShowPassButton />
+              <HideShowPassButton
+                onClick={handlePasswordVisibility}
+                show={showPassword}
+              />
             </StackedInput>
 
             <div className="login-form-actions">
@@ -33,15 +44,10 @@ const Login: React.FC = () => {
                 <input type="checkbox" id="rememberMe" />
                 <label htmlFor="rememberMe">Lembrar-me</label>
 
-                <Link to="/login">Esqueci minha senha</Link>
+                <Link to="/forgot-password">Esqueci minha senha</Link>
               </div>
 
-              <button
-                type="submit"
-                className="login-form-submit-button-inactive"
-              >
-                Entrar
-              </button>
+              <FormButton text="Entrar" deactivated={true} />
             </div>
           </div>
         </div>

@@ -3,6 +3,7 @@
   margin-left: -40px;
   background-color: transparent;
   border-color: transparent;
+  cursor: pointer;
 }
 
 .stacked-input-inner-button:focus {

@@ -1,5 +1,5 @@
 
-# Proffy - You study platform
+# Proffy - Your study platform
 
 ![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)
 

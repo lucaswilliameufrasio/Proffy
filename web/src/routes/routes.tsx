@@ -8,7 +8,8 @@ import TeacherForm from '../pages/TeacherForm'
 const Routes: React.FC = () => {
   return (
     <Router>
-      <Route exact path="/" component={Landing} />
+      <Route exact path="/" component={Login} />
+      <Route path="/landing" component={Landing} />
       <Route exact path="/study" component={TeacherList} />
       <Route exact path="/give-classes" component={TeacherForm} />
     </Router>

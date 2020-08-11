@@ -18,7 +18,7 @@ interface IHeaderProps {
 const Header: React.FC<IHeaderProps> = ({ description, children }) => {
   return (
     <header className="landing-page-header">
-      <div className="top-bar-container">
+      <div className="landing-top-bar-container">
         <div className="user-container">
           <Link to="/">
             <img
@@ -29,7 +29,7 @@ const Header: React.FC<IHeaderProps> = ({ description, children }) => {
           </Link>
         </div>
 
-        <Link to="/" className="logout-button">
+        <Link to="/login" className="logout-button">
           <img src={switchButton} alt="Logout" />
         </Link>
       </div>

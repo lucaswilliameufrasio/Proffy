@@ -10,13 +10,17 @@ import './styles.css'
 
 interface IPageHeaderProps {
   title: string
+  pageTitle?: string
   description?: string
+  headerRight?: React.ReactNode
   children?: React.ReactNode
 }
 
 const PageHeader: React.FC<IPageHeaderProps> = ({
   title,
+  pageTitle,
   description,
+  headerRight,
   children
 }) => {
   return (
@@ -25,15 +29,21 @@ const PageHeader: React.FC<IPageHeaderProps> = ({
         <Link to="/">
           <img src={backIcon} alt="Voltar para página inicial" />
         </Link>
-
+        <span>{pageTitle}</span>
         <img src={logoImg} alt="Proffy Logo" />
       </div>
 
       <div className="header-content">
-        <strong>{title}</strong>
-        {description && <p>{description}</p>}
+        <div className="header-left-content">
+          <strong>{title}</strong>
+          {description && <p>{description}</p>}
 
-        {children}
+          {children}
+        </div>
+
+        {headerRight && (
+          <div className="header-right-content">{headerRight}</div>
+        )}
       </div>
     </header>
   )
@@ -41,7 +51,9 @@ const PageHeader: React.FC<IPageHeaderProps> = ({
 
 PageHeader.propTypes = {
   title: PropTypes.string.isRequired,
+  pageTitle: PropTypes.string,
   description: PropTypes.string,
+  headerRight: PropTypes.node,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node

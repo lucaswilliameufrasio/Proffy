@@ -1,0 +1,53 @@
+.side-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 45%;
+  background: var(--color-primary-light);
+}
+
+.side-banner img {
+  overflow: hidden;
+  height: 90%;
+}
+
+.side-banner-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+
+  color: var(--color-text-in-primary);
+}
+
+.side-banner-content img {
+  width: 16rem;
+}
+
+.side-banner-content h2 {
+  max-width: 23rem;
+  font-weight: 500;
+  font-size: 2.4rem;
+  line-height: 4.6rem;
+  margin-top: 0.8rem;
+}
+
+@media (min-width: 900px) {
+  .side-banner {
+    width: 50%;
+    height: 100%;
+  }
+
+  .side-banner img {
+    height: 70%;
+  }
+
+  .side-banner-content img {
+    width: 33.417rem;
+  }
+
+  .side-banner-content h2 {
+    max-width: 30rem;
+  }
+}

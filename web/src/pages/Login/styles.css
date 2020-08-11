@@ -1,0 +1,158 @@
+.login-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-inner-form-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  width: 32rem;
+}
+
+.login-form h2 {
+  margin-bottom: 1.2rem;
+
+  font: 600 3rem Poppins;
+  color: var(--color-text-title);
+}
+
+.login-form input {
+  font: 500 1.4rem Poppins;
+}
+
+.login-form input::placeholder {
+  color: var(--color-text-complement);
+}
+
+.stacked-input-block input {
+  padding-right: 40px;
+}
+
+.login-form button[type='submit'] {
+  width: 100%;
+}
+
+.login-form-actions {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  color: var(--color-text-complement);
+}
+
+.login-form-actions input {
+  border-color: var(--color-line-in-white);
+}
+
+.login-form-actions label {
+  margin-left: 0.4rem;
+}
+
+.login-form-submit-button-inactive {
+  width: 100%;
+  height: 5.6rem;
+  background: var(--color-line-in-white);
+  color: var(--color-text-complement);
+  border: 0;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  font: 700 1.6rem Archivo;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  margin-top: 3.2rem;
+}
+
+.login-form-submit-button-active {
+  background: var(--color-secondary);
+  color: var(--color-button-text);
+}
+
+#page-teacher-form main footer button:hover {
+  background: var(--color-secondary-dark);
+}
+
+.login-form-action-group {
+  margin: 2.4rem 0 4rem 0.4rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.login-form-action-group label {
+  margin-right: auto;
+}
+
+.login-form-action-group a {
+  text-decoration: none;
+  color: var(--color-text-complement);
+}
+
+.not-registered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10% 4rem;
+}
+
+.not-registered-button {
+  display: flex;
+  flex-direction: column;
+}
+
+.not-registered-button span {
+  font: 400 1.6rem Poppins;
+  color: var(--color-text-base);
+  text-align: center;
+}
+
+.not-registered-button a {
+  font: 400 1.6rem Poppins;
+  color: var(--color-primary);
+}
+
+.free-registration {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .login-container {
+    flex-direction: row;
+  }
+
+  .login-form-container {
+    width: 50%;
+  }
+
+  .login-form {
+    width: 40rem;
+  }
+
+  .free-registration {
+    display: block;
+  }
+
+  .not-registered-container {
+    justify-content: space-between;
+  }
+
+  .not-registered-button span {
+    text-align: start;
+  }
+}

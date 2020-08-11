@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
 
+import FormButton from '../../components/FormButton'
+import Input from '../../components/Input'
 import PageHeader from '../../components/PageHeader'
+import Select from '../../components/Select'
 import TeacherItem, { ITeacher } from '../../components/TeacherItem'
 
-import './styles.css'
-import Input from '../../components/Input'
-import Select from '../../components/Select'
+import smileIcon from '../../assets/images/icons/smile.svg'
+
 import api from '../../services/api'
+
+import './styles.css'
 
 const TeacherList: React.FC = () => {
   const [teachers, setTeachers] = useState([])
@@ -30,7 +34,16 @@ const TeacherList: React.FC = () => {
   }
   return (
     <div id="page-teacher-list" className="container">
-      <PageHeader title="Estes são os proffys disponíveis.">
+      <PageHeader
+        pageTitle="Estudar"
+        title="Estes são os proffys disponíveis."
+        headerRight={
+          <span>
+            <img src={smileIcon} alt="Smile" />
+            <p>Nós temos 32 professores.</p>
+          </span>
+        }
+      >
         <form id="search-teachers" onSubmit={searchTeachers}>
           <Select
             name="subject"
@@ -63,7 +76,7 @@ const TeacherList: React.FC = () => {
               { value: '3', label: 'Quarta-feira' },
               { value: '4', label: 'Quinta-feira' },
               { value: '5', label: 'Sexta-feira' },
-              { value: '6', label: 'Sábado-feira' }
+              { value: '6', label: 'Sábado' }
             ]}
           />
 
@@ -75,7 +88,7 @@ const TeacherList: React.FC = () => {
             onChange={(event) => setTime(event.target.value)}
           />
 
-          <button type="submit">Buscar</button>
+          <FormButton text="Buscar" deactivated={false} />
         </form>
       </PageHeader>
 

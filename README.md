@@ -7,9 +7,8 @@
 - [ ] Get at least 80% of test coverage on each part of the application.
 
 
-## I had started doing this way, but i created this repository to finish the Next Level Week in time.
-## Now i have no deadline and no time to finish all features, so keep on follow to see what is coming.
-
-> How i've started, this is the first repo i've created for this project.
+## I had started doing the way shown on the picture below, but I created this repository to finish the Next Level Week in time
 
 ![The first repository](https://user-images.githubusercontent.com/34021576/90178879-fd194480-dd82-11ea-8d5d-61aef9ef31df.png)
+
+## Now I have no deadline to finish all features, so keep on following to see what is coming.

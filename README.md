@@ -1,5 +1,4 @@
-
-# Proffy - Your study platform
+# Proffy - Your learning platform
 
 ![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)
 
@@ -7,7 +6,7 @@
 
 > Create beautiful applications.
 
-> react, react native, nodejs, typescript, postgresql, prisma
+> react, react native, nodejs, typescript, postgresql, prisma 2
 
 ![Proffy banner](https://user-images.githubusercontent.com/34021576/89958641-c15e6d80-dc10-11ea-8254-02598b4a89c5.png)
 ---

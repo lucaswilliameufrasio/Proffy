@@ -4,7 +4,7 @@
 
 > Created following on Next Level Week #2 of [Rocketseat](https://www.rocketseat.com.br).
 
-> Create beautiful applications.
+> Create applications using only one language.
 
 > react, react native, nodejs, typescript, postgresql, prisma 2
 

@@ -1,0 +1,16 @@
+.user-container a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.user-container a span {
+  font: 700 1.8rem Archivo;
+  color: var(--color-text-title);
+}
+
+.user-container a img {
+  height: 7rem;
+  margin-right: 1rem;
+  border-radius: 50%;
+}

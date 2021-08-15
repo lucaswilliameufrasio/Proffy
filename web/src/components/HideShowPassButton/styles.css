@@ -1,0 +1,11 @@
+.stacked-input-inner-button {
+  height: 3rem;
+  margin-left: -40px;
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer;
+}
+
+.stacked-input-inner-button:focus {
+  outline: none;
+}
